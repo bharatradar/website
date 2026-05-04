@@ -1,9 +1,9 @@
 ---
-title: "Feeding"
-description: ""
-lead: ""
+title: "Get Started"
+description: "Start feeding BharatRadar and help build India's open ADS-B network."
+lead: "Choose the method that fits your setup."
 date: 2023-06-27T22:25:19+02:00
-lastmod: 2023-06-27T22:25:19+02:00
+lastmod: 2026-05-05T01:00:00+05:30
 draft: false
 images: []
 menu:
@@ -16,24 +16,28 @@ toc: false
 
 ## Feed BharatRadar
 
-Adding a receiver to our network is easy. You can use any of the following methods:
+Adding a receiver to our network is easy. Choose the path that fits your situation:
 
-### [ADSB.im Image](https://adsb.im/howto)
+### [Become a Feeder](../become-a-feeder/) — New to ADS-B?
 
-Easy: recommended for new stations running on dedicated hardware / Single Board Computers (SBCs).
+**Best for:** First-time users with a Raspberry Pi and RTL-SDR.
 
-Simple to use ADSB Feeder Images for common Single Board Computers like most of the Raspberry Pi family and many others. Web UI driven. Very limited technical skill required.
+One-line install that auto-detects your hardware, installs everything, and connects to our server. Setup in under 15 minutes.
 
-### [BharatRadar Docker Toolkit](../docker)
+### [Bare Metal](../bare-metal/) — Already Have a Receiver?
 
-For technically versed users: recommended for new stations that won't be running on a dedicated SBC.
+**Best for:** Users who already run readsb, ADSB.im, or any ADS-B station.
 
-Install, run, and maintain an ADS-B / UAT / MLAT / ACARS / VDL2 / AIS feed client to a multitude of aggregators.
+Add BharatRadar as a feeder without disrupting your existing setup. Just add one connector line.
 
-### [Bare Metal](../bare-metal)
+### [Docker Toolkit](../docker/) — Want Multi-Aggregator Feeding?
 
-For technically versed users: recommended for existing stations.
+**Best for:** Advanced users who want to feed FlightRadar24, Radarbox, ADSBExchange, and more alongside BharatRadar.
 
-If you already have an ADS-B station, you can add BharatRadar as a feeder, this will not interfere with your existing setup.
+Full docker-compose stack with CLI tools for managing feeds to multiple aggregators.
 
-All you need is BEAST out on port 30005.
+### [ADSB.im Image](../adsb-image/) — Want a Pre-Built SD Card Image?
+
+**Best for:** Users who prefer flashing a ready-made image with a web UI for configuration.
+
+Community-maintained feeder image with easy web-based setup.

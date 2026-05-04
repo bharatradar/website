@@ -4,8 +4,10 @@ lead: "The bharatradar.com docker feed client is a toolkit that allows you to in
 draft: false
 images: []
 type: docs
-weight: 102
+weight: 104
 ---
+
+> **New to feeding?** Most users should start with our [one-line feeder installer](../become-a-feeder/). The Docker toolkit is for advanced users who want multi-aggregator feeding and full container control.
 
 By default, it feeds MLAT+ADSB to bharatradar.com. You can enable UAT/ACARS/VDL2, and feed to your plane data to FlightRadar24, Radarbox, Piaware, [and more](https://github.com/bharatradar/feed/blob/main/.env.example)
 
