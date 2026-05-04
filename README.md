@@ -1,13 +1,13 @@
-# BharatRadar Website
+# bharatradar/website
 
-Simple landing page for bharatradar.com — India's open ADS-B flight tracking network.
+<https://www.bharatradar.com>
 
-## Build
+Powered by [doks](https://github.com/h-enk/doks)
 
-```bash
-docker build -t ghcr.io/bharatradar/website:latest .
+## Development
 ```
-
-## Deploy
-
-Built and published by CI in [bharatradar/infra](https://github.com/bharatradar/infra).
+git clone https://github.com/bharatradar/website
+cd website
+npm install
+npm run start
+```
