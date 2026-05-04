@@ -82,7 +82,61 @@ main {
 
 .hero {
     text-align: center;
-    padding: 6rem 0 4rem;
+    padding: 4rem 0 4rem;
+}
+
+.hero-live-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+}
+
+.live-stat {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.live-stat:hover {
+    transform: translateY(-1px);
+}
+
+.live-stat:hover .live-stat-value {
+    color: var(--primary);
+}
+
+.live-stat:hover .live-stat-label {
+    color: var(--text);
+}
+
+.live-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.2;
+    transition: color 0.2s;
+}
+
+.live-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+}
+
+.live-stat-divider {
+    width: 1px;
+    height: 2rem;
+    background: var(--border);
 }
 
 .hero h1 {
@@ -289,5 +343,17 @@ footer .links a:hover {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+    }
+
+    .hero-live-stats {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0.75rem 1.25rem;
+        border-radius: 0.75rem;
+    }
+
+    .live-stat-divider {
+        width: 2rem;
+        height: 1px;
     }
 }
