@@ -1,7 +1,7 @@
 
 [[main]]
   name = "Live Map (Globe)"
-  url = "https://bharatradar.com"
+  url = "https://map.bharatradar.com"
   weight = 10
 
 [[main]]
