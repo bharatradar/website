@@ -116,10 +116,9 @@
     </footer>
 
     <script>
-        // Poll live stats from API
-        async function fetchStats() {
+        (async function fetchStats() {
             try {
-                const res = await fetch('https://api.bharatradar.com/0/me');
+                const res = await fetch('https://api.bharatradar.com/0/me', { signal: AbortSignal.timeout(4000) });
                 const data = await res.json();
                 if (data.global && data.global.aircraft) {
                     document.getElementById('aircraft-count').textContent = data.global.aircraft;
@@ -127,12 +126,9 @@
                 if (data.global && data.global.beast) {
                     document.getElementById('feeder-count').textContent = data.global.beast;
                 }
-            } catch (e) {
-                console.log('API not reachable, using defaults');
-            }
-        }
-        fetchStats();
-        setInterval(fetchStats, 30000);
+            } catch (e) {}
+            setTimeout(fetchStats, 5000);
+        })();
     </script>
 </body>
 </html>
