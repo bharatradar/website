@@ -110,12 +110,11 @@
             try {
                 const res = await fetch('https://api.bharatradar.com/0/me');
                 const data = await res.json();
-                if (data.ac) {
-                    document.getElementById('aircraft-count').textContent = data.ac.length;
+                if (data.global && data.global.aircraft) {
+                    document.getElementById('aircraft-count').textContent = data.global.aircraft;
                 }
-                if (data.mlat && data.mlat.peers) {
-                    const uniqueFeeders = new Set(data.mlat.peers.map(p => p.uuid));
-                    document.getElementById('feeder-count').textContent = uniqueFeeders.size;
+                if (data.clients && data.clients.beast) {
+                    document.getElementById('feeder-count').textContent = data.clients.beast.length;
                 }
             } catch (e) {
                 console.log('API not reachable, using defaults');
