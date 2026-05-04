@@ -113,8 +113,8 @@
                 if (data.global && data.global.aircraft) {
                     document.getElementById('aircraft-count').textContent = data.global.aircraft;
                 }
-                if (data.clients && data.clients.beast) {
-                    document.getElementById('feeder-count').textContent = data.clients.beast.length;
+                if (data.global && data.global.beast) {
+                    document.getElementById('feeder-count').textContent = data.global.beast;
                 }
             } catch (e) {
                 console.log('API not reachable, using defaults');

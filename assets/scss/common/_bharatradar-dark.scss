@@ -1,0 +1,155 @@
+// BharatRadar landing page color palette overrides for dark mode
+// Matches /css/style.css on the landing page
+
+$br-bg: #0a0e17;
+$br-surface: #111827;
+$br-border: #1e293b;
+$br-text: #e2e8f0;
+$br-text-muted: #94a3b8;
+$br-primary: #3b82f6;
+$br-primary-hover: #2563eb;
+$br-accent: #10b981;
+
+[data-dark-mode] body {
+  background: $br-bg;
+  color: $br-text;
+}
+
+[data-dark-mode] body .navbar,
+[data-dark-mode] body .doks-subnavbar {
+  background-color: rgba(10, 14, 23, 0.95);
+  border-bottom-color: $br-border;
+}
+
+[data-dark-mode] body .offcanvas-header {
+  border-bottom-color: $br-border;
+}
+
+[data-dark-mode] body .form-control.is-search {
+  background: $br-surface;
+  border-color: transparent;
+  color: $br-text;
+
+  &:focus {
+    border-color: $br-primary;
+  }
+}
+
+[data-dark-mode] body .docs-links h3:not(:first-child) {
+  border-top-color: $br-border;
+}
+
+[data-dark-mode] body .card {
+  background: $br-surface;
+  border-color: $br-border;
+}
+
+[data-dark-mode] body .card.bg-light {
+  background: $br-surface !important;
+}
+
+[data-dark-mode] body .footer {
+  border-top-color: $br-border;
+}
+
+[data-dark-mode] body .docs-navigation {
+  border-top-color: $br-border;
+}
+
+[data-dark-mode] body .border-top {
+  border-top-color: $br-border !important;
+}
+
+[data-dark-mode] body .btn-toggle::before {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%28148, 163, 184, 0.75%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+[data-dark-mode] body .text-muted {
+  color: $br-text-muted !important;
+}
+
+[data-dark-mode] body .navbar-light .navbar-brand {
+  color: $br-text !important;
+}
+
+[data-dark-mode] body .navbar-light .navbar-nav .nav-link {
+  color: $br-text-muted;
+
+  &:hover,
+  &:focus,
+  &.active {
+    color: $br-primary;
+  }
+}
+
+[data-dark-mode] body a.docs-link:hover,
+[data-dark-mode] body .btn-toggle-nav a:hover {
+  color: $br-primary;
+}
+
+[data-dark-mode] body .offcanvas .nav-link:hover {
+  color: $br-primary;
+}
+
+[data-dark-mode] body .btn-primary {
+  background: $br-primary;
+  border-color: $br-primary;
+
+  &:hover {
+    background: $br-primary-hover;
+    border-color: $br-primary-hover;
+  }
+}
+
+[data-dark-mode] body .btn-doks-light:hover {
+  color: $br-primary;
+}
+
+[data-dark-mode] body code:not(.hljs) {
+  background: $br-surface;
+}
+
+[data-dark-mode] body blockquote {
+  border-left-color: $br-border;
+}
+
+[data-dark-mode] body .form-control {
+  background: $br-surface;
+  border-color: $br-border;
+  color: $br-text;
+}
+
+[data-dark-mode] body .dropdown-menu {
+  background: $br-surface;
+  border-color: $br-border;
+}
+
+[data-dark-mode] body .dropdown-item {
+  color: $br-text;
+
+  &:hover,
+  &.active,
+  &:focus {
+    color: $br-primary;
+    background: $br-bg;
+  }
+}
+
+[data-dark-mode] body .alert-doks {
+  background: $br-surface;
+  color: $br-text;
+}
+
+[data-dark-mode] body .page-links a:hover {
+  color: $br-primary;
+}
+
+[data-dark-mode] body .doks-search::after {
+  color: $br-text-muted;
+  border-color: $br-border;
+}
+
+// Hide the dark mode toggle since we default to dark
+#mode {
+  display: none !important;
+}
