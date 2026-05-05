@@ -1,7 +1,8 @@
 ---
 title: "Feeders Only"
-description: "As a feeder, you help by providing data to the network. Thank you for your contribution."
+description: "Exclusive resources for active feeders — personal map, MLAT sync, raw data streams, and the readsb API."
+lead: "Thank you for feeding! Here are the resources available to you as an active feeder."
 draft: false
 images: []
-weight: 200
+weight: 300
 ---

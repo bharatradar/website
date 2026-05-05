@@ -1,7 +1,8 @@
 ---
 title: "Feed"
-description: "By feeding bharatradar.com, you help us build a better network of flight tracking stations."
+description: "Set up your ADS-B receiver and start feeding data to BharatRadar. Choose the method that fits your setup."
+lead: "Set up your ADS-B receiver and start feeding data to BharatRadar. Choose the method that fits your setup."
 draft: false
 images: []
-weight: 101
+weight: 200
 ---

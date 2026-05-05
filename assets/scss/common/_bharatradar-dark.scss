@@ -153,3 +153,167 @@ $br-accent: #10b981;
 #mode {
   display: none !important;
 }
+
+// Docs landing page — section cards
+.docs-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.doc-card {
+  background: $br-surface;
+  border: 1px solid $br-border;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: $br-primary;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+  }
+
+  h3 {
+    margin: 0.75rem 0 0.5rem;
+
+    a {
+      color: $br-text;
+      text-decoration: none;
+
+      &:hover {
+        color: $br-primary;
+      }
+    }
+  }
+
+  p {
+    color: $br-text-muted;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.doc-card-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.doc-card-link {
+  color: $br-primary;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    color: $br-primary-hover;
+    text-decoration: underline;
+  }
+}
+
+// Table styling for docs pages
+[data-dark-mode] body table {
+  background: $br-surface;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  thead {
+    background: rgba(59, 130, 246, 0.1);
+
+    th {
+      border-bottom: 2px solid $br-border;
+      color: $br-text;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $br-border;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background: rgba(59, 130, 246, 0.05);
+      }
+    }
+
+    td {
+      padding: 0.6rem 1rem;
+      color: $br-text;
+    }
+  }
+}
+
+// Breadcrumb styling
+[data-dark-mode] body .breadcrumb {
+  color: $br-text-muted;
+
+  a {
+    color: $br-text-muted;
+
+    &:hover {
+      color: $br-primary;
+    }
+  }
+
+  .breadcrumb-item.active {
+    color: $br-text;
+  }
+}
+
+// Docs content improvements
+[data-dark-mode] body .docs-content h1 {
+  color: $br-text;
+  font-weight: 700;
+}
+
+[data-dark-mode] body .docs-content h2 {
+  color: $br-text;
+  border-bottom-color: $br-border;
+}
+
+[data-dark-mode] body .docs-content h3 {
+  color: $br-text;
+}
+
+[data-dark-mode] body .lead {
+  color: $br-text-muted;
+}
+
+// Code block improvements
+[data-dark-mode] body pre {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid $br-border;
+  border-radius: 0.5rem;
+}
+
+// Sidebar active link highlight
+[data-dark-mode] body .docs-link.active {
+  color: $br-primary !important;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+// TOC styling
+[data-dark-mode] body .page-links {
+  a {
+    color: $br-text-muted;
+
+    &:hover {
+      color: $br-primary;
+    }
+  }
+}
+
+// Edit page link
+[data-dark-mode] body .edit-page a {
+  color: $br-text-muted;
+
+  &:hover {
+    color: $br-primary;
+  }
+}
