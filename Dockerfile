@@ -2,7 +2,7 @@ FROM node:lts as build
 WORKDIR /src
 ADD . .
 RUN npm install
-RUN npm run build
+RUN npx hugo --gc --minify --buildFuture
 
 FROM nginx:alpine
 COPY --from=build /src/public /usr/share/nginx/html
