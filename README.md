@@ -4,7 +4,7 @@
 
 Powered by [doks](https://github.com/h-enk/doks)
 
-> **Version:** 5.4.0
+> **Version:** 5.7.0
 
 ## Development
 ```
