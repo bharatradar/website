@@ -2,7 +2,7 @@ FROM node:lts as build
 WORKDIR /src
 ADD . .
 RUN npm install
-RUN npx hugo --gc --minify --buildFuture
+RUN ./node_modules/.bin/hugo/hugo --gc --minify --buildFuture
 
 FROM nginx:alpine
 COPY --from=build /src/public /usr/share/nginx/html
