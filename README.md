@@ -2,15 +2,27 @@
 
 <https://bharatradar.com>
 
-Powered by [doks](https://github.com/h-enk/doks)
+> **Version:** 6.0.0
 
-> **Version:** 5.7.0
+Plain HTML/CSS/JS static site. No build step, no dependencies.
 
-## Development
+## Structure
+
 ```
-git clone https://github.com/bharatradar/website
-cd website
-npm install
-npm run start
+static-output/   ← All site files (HTML, CSS, JS, fonts, images)
+Dockerfile       ← Single-stage nginx:alpine
+favicon.ico      ← Site favicon
+README.md        ← This file
 ```
-# BharatRadar Docs
+
+## Edit the site
+
+Just edit the HTML files in `static-output/` and commit. No build required.
+
+## Deploy
+
+```
+git push origin main
+```
+
+The Dockerfile copies `static-output/` directly into nginx:alpine.
