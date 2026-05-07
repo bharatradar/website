@@ -1,0 +1,4 @@
+    flex-shrink: 0;
+}
+
+.header-dashboard .pulse-dot {
