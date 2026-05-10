@@ -11,6 +11,20 @@
     <style>
         .fn-mark { cursor: pointer; color: #23c074; font-weight: bold; }
         .fn-mark:hover { text-decoration: underline; }
+        @keyframes sweep {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        .animate-radar-sweep {
+            animation: sweep 12s linear infinite;
+        }
+        @keyframes radar-pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        .blip {
+            animation: radar-pulse 3s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="pt-[88px] sm:pt-16">
@@ -35,23 +49,59 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-live-stats">
-                <a href="https://map.bharatradar.com" class="live-stat" title="View on Live Map">
-                    <span class="live-stat-value js-aircraft-count">—</span>
-                    <span class="live-stat-label">Live Aircraft</span>
-                </a>
-                <span class="live-stat-divider"></span>
-                <a href="https://mlat.bharatradar.com" class="live-stat" title="View on MLAT Map">
-                    <span class="live-stat-value js-feeder-count">—</span>
-                    <span class="live-stat-label">Active Feeders</span>
-                </a>
+        <section class="hero relative overflow-hidden bg-[#0b1120]">
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute inset-0 grid grid-cols-6">
+                    <div class="border-r border-green-500/10"></div>
+                    <div class="border-r border-green-500/10"></div>
+                    <div class="border-r border-green-500/10"></div>
+                    <div class="border-r border-green-500/10"></div>
+                    <div class="border-r border-green-500/10"></div>
+                    <div class="border-r border-green-500/10"></div>
+                </div>
+                <div class="absolute left-1/4 top-1/2 w-0 h-0">
+                    <div class="absolute -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full border border-green-500/20"></div>
+                    <div class="absolute -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full border border-green-500/15"></div>
+                    <div class="absolute -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-green-500/10"></div>
+                    <div class="absolute -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full border border-green-500/5"></div>
+                    <div class="absolute -translate-x-1/2 -translate-y-1/2 w-[1200px] h-px bg-green-500/20"></div>
+                    <div class="absolute -translate-x-1/2 -translate-y-1/2 h-[1200px] w-px bg-green-500/20"></div>
+                    <div class="absolute -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full animate-radar-sweep" style="background: conic-gradient(from 0deg, transparent 94%, rgba(21, 163, 74, 0.3) 100%);"></div>
+                    <div class="absolute -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-green-500 rounded-full shadow-[0_0_15px_rgba(21,163,74,1)]"></div>
+                </div>
+                <div class="absolute left-[35%] top-[40%] blip">
+                    <div class="w-1.5 h-1.5 bg-green-400 rounded-sm rotate-45"></div>
+                    <div class="mt-1 ml-2 text-[10px] font-mono text-green-500 leading-tight">
+                        <p>6E2134</p>
+                        <p>320KT / 24000FT</p>
+                    </div>
+                </div>
+                <div class="absolute left-[60%] top-[65%] blip" style="animation-delay: 1.5s;">
+                    <div class="w-1.5 h-1.5 bg-green-400 rounded-sm rotate-45"></div>
+                    <div class="mt-1 ml-2 text-[10px] font-mono text-green-500 leading-tight opacity-70">
+                        <p>UK812</p>
+                        <p>410KT / 36000FT</p>
+                    </div>
+                </div>
             </div>
-            <h1>India's Open ADS-B Flight Tracking Network</h1>
-            <p>Community-powered, open-source aircraft tracking across India. All data is free and open for everyone.<sup class="fn-mark">*</sup></p>
-            <div class="hero-buttons">
-                <a href="https://map.bharatradar.com" class="btn btn-primary">View Live Map</a>
-                <a href="/docs/get-started/become-a-feeder/" class="btn btn-secondary">Become a Feeder</a>
+            <div class="relative z-10">
+                <div class="hero-live-stats">
+                    <a href="https://map.bharatradar.com" class="live-stat" title="View on Live Map">
+                        <span class="live-stat-value js-aircraft-count">—</span>
+                        <span class="live-stat-label">Live Aircraft</span>
+                    </a>
+                    <span class="live-stat-divider"></span>
+                    <a href="https://mlat.bharatradar.com" class="live-stat" title="View on MLAT Map">
+                        <span class="live-stat-value js-feeder-count">—</span>
+                        <span class="live-stat-label">Active Feeders</span>
+                    </a>
+                </div>
+                <h1>India's Open ADS-B Flight Tracking Network</h1>
+                <p>Community-powered, open-source aircraft tracking across India. All data is free and open for everyone.<sup class="fn-mark">*</sup></p>
+                <div class="hero-buttons">
+                    <a href="https://map.bharatradar.com" class="btn btn-primary">View Live Map</a>
+                    <a href="/docs/get-started/become-a-feeder/" class="btn btn-secondary">Become a Feeder</a>
+                </div>
             </div>
         </section>
 
