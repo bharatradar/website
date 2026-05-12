@@ -609,25 +609,87 @@ footer .links a:hover {
         font-size: 0.9rem;
     }
 
-    .stats {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .hero-live-stats {
-        flex-direction: column;
-        gap: 0.75rem;
-        padding: 0.75rem 1.25rem;
+        flex-direction: row;
+        gap: 0.5rem;
+        padding: 0.35rem 0.75rem;
         border-radius: 0.75rem;
     }
 
+    .live-stat-value {
+        font-size: 1rem;
+    }
+
+    .live-stat-label {
+        font-size: 0.6rem;
+    }
+
     .live-stat-divider {
-        width: 2rem;
-        height: 1px;
+        width: 1px;
+        height: 1.25rem;
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .hero {
+        padding-bottom: 1.5rem;
+    }
+
+    .hero p {
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.72rem;
+    }
+
+    .features {
+        gap: 0.6rem;
+        padding: 0.75rem 0 1.5rem;
+    }
+
+    .feature-card {
+        padding: 0.85rem;
+    }
+
+    .feature-card h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .feature-card p {
+        font-size: 0.75rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .feeder {
+        padding: 1.5rem 0;
+    }
+
+    .feeder h2 {
+        font-size: 1.2rem;
+    }
+
+    .feeder > p {
+        margin-bottom: 1rem;
+    }
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.35rem;
+        padding: 1.5rem 0;
+    }
+
+    .stat-number {
+        font-size: 1rem;
+    }
+
+    .stat-label {
+        font-size: 0.55rem;
     }
 }
