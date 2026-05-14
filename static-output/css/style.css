@@ -120,9 +120,9 @@ main {
 
 .hero {
     text-align: center;
-    padding: 5rem 2rem 4rem;
+    /* padding: 2rem 2rem 2rem; */
     background: linear-gradient(180deg, var(--hero-bg) 0%, var(--bg) 100%);
-    margin: -2rem -2rem 2rem -2rem;
+    margin: -1rem -1rem 1rem -1rem;
     position: relative;
     overflow: hidden;
 }
@@ -306,7 +306,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    padding: 4rem 0;
+    /* padding: 4rem 0; */
 }
 
 .feature-card {
@@ -351,7 +351,7 @@ main {
 }
 
 .feeder {
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
 }
 
