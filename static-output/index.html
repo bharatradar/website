@@ -225,15 +225,94 @@
         </p>
     </footer>
 
+    <button id="chat-fab" class="chat-fab" aria-label="Open chat">
+        <i class="fa-solid fa-message"></i>
+    </button>
+
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <div class="chat-header-title">
+                <span class="chat-dot">
+                    <span class="chat-dot-ping"></span>
+                    <span class="chat-dot-core"></span>
+                </span>
+                <h3>Radar Assistant</h3>
+            </div>
+            <button id="chat-close" class="chat-close-btn" aria-label="Close chat">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div id="chat-messages" class="chat-messages">
+            <div class="chat-msg-row">
+                <div class="chat-avatar bot"><i class="fa-solid fa-robot"></i></div>
+                <div class="chat-bubble bot">
+                    🛠️ <b>Bharat Radar - Master Command List</b><br><br>
+                    <b>📱 Quick Commands</b><br>
+                    • <code>/flights DEL</code> — Live flights at Delhi<br>
+                    • <code>/status IGO123</code> — Flight status<br>
+                    • <code>/route DEL BOM</code> — Flights on route<br>
+                    • <code>/delayed DEL</code> — Delayed flights at airport<br>
+                    • <code>/board DEL arrivals</code> — Airport timetable<br><br>
+
+                    <b>1. ✈️ Live Flight Tracking & Concierge</b><br>
+                    • <i>"Where is my flight IGO123?"</i><br>
+                    • <i>"Status of QP1312"</i><br><br>
+
+                    <b>2. 🗓️ Airport Timetables & Boards</b><br>
+                    • <i>"Show me the departures board for Pune"</i><br>
+                    • <i>"Afternoon arrivals in Delhi"</i><br>
+                    • <i>"What flights are leaving Mumbai tonight?"</i><br>
+                    • <i>"Give me the next 5"</i> (Follow-up)<br><br>
+
+                    <b>3. 🗺️ Route & Approaching Radar</b><br>
+                    • <i>"What is approaching Pune right now?"</i><br>
+                    • <i>"Status of all flights from Chennai to Pune today"</i><br><br>
+
+                    <b>4. 🚨 Proactive Alerts</b><br>
+                    • <i>"Notify me when IGO123 lands"</i><br>
+                    • <i>"Alert me when AIC456 is 30 mins away from landing"</i><br><br>
+
+                    <b>5. 📊 Turnarounds, Ground Ops & Anomalies</b><br>
+                    • <i>"Average turnaround time by airline at BOM"</i><br>
+                    • <i>"Show me planes currently parked at Pune"</i><br>
+                    • <i>"Any go-arounds or diversions in Delhi?"</i><br><br>
+
+                    <b>6. ⚙️ Deep Intel & System</b><br>
+                    • <i>"History of hex 800bc4"</i><br>
+                    • <i>"Airspace pulse"</i><br><br>
+
+                    🧹 <b>Type /clear to wipe the AI memory if it gets confused.</b>
+                </div>
+            </div>
+        </div>
+
+        <div id="chat-typing" class="chat-typing">
+            <div class="chat-typing-dots">
+                <span class="chat-typing-dot"></span>
+                <span class="chat-typing-dot"></span>
+                <span class="chat-typing-dot"></span>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" class="chat-input" placeholder="E.g. What's leaving Pune tonight?">
+            <button id="chat-send" class="chat-send-btn" aria-label="Send message">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="/js/chat-widget.js"></script>
     <script>
         (async function fetchStats() {
             try {
                 const res = await fetch('https://api.bharatradar.com/0/me', { signal: AbortSignal.timeout(4000) });
                 const data = await res.json();
-                if (data.global && data.global.aircraft) {
+                if (data.global && typeof data.global.aircraft === 'number') {
                     document.querySelectorAll('.js-aircraft-count').forEach(el => { el.textContent = data.global.aircraft; });
                 }
-                if (data.global && data.global.beast) {
+                if (data.global && typeof data.global.beast === 'number') {
                     document.querySelectorAll('.js-feeder-count').forEach(el => { el.textContent = data.global.beast; });
                 }
             } catch (e) {}
